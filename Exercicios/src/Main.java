@@ -99,7 +99,7 @@ public class Main
         float anelChip = 4;
         float anelAlimento = 7;
 
-        float valorTotal = anelAlimento + anelChip * quantGalinha;
+        float valorTotal = (anelAlimento + anelChip) * quantGalinha;
 
         System.out.println("O total do valor para identificar os frangos é: " + valorTotal);
 
