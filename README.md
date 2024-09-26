@@ -1,4 +1,4 @@
-# Programa de Estudos em Java
+# Estudos em Java
 Este repositório contém um conjunto de funções escritas em Java para praticar a lógica de programação, manipulação de entrada e saída de dados e cálculos simples. 
 O programa apresenta diversos cenários de problemas cotidianos, como cálculo de área de terreno, valor de ferraduras para cavalos, quantidade de ingredientes para sanduíches e outros.
 
