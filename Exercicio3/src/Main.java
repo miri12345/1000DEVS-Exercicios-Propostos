@@ -384,27 +384,27 @@ public class Main {
     // 11, 12
 
      public static void anoBissexto(){
-        Scanner teclado = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int dia = 0, mes = 0, ano = 0;
         boolean anoNaoEhBissexto;
 
         try{
             System.out.print("Digite o dia do mes: ");
-            dia = teclado.nextInt();
+            dia = scanner.nextInt();
         }catch (Exception e){
             System.out.println("Digite uma data válida");
         }
 
         try{
             System.out.print("Digite o mes do ano: ");
-            mes = teclado.nextInt();
+            mes = scanner.nextInt();
         }catch (Exception e){
             System.out.println("Digite uma data válida");
         }
 
         try{
             System.out.print("Digite o ano: ");
-            ano = teclado.nextInt();
+            ano = scanner.nextInt();
         }catch (Exception e){
             System.out.println("Digite uma data válida");
         }
