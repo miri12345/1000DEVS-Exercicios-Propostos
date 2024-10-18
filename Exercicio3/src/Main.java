@@ -409,26 +409,22 @@ public class Main {
             System.out.println("Digite uma data válida");
         }
 
-        anoNaoEhBissexto = ((ano % 4) != 0);
-        // corrigir (ano % 4 == 0) && ((ano % 100 != 0) || (ano % 400 == 0))
-
-        // se o dia for 29 e o mes for fevereiro e o ano nao é bissexto
-        if (dia == 29 && mes == 2 && anoNaoEhBissexto ) {
-            System.out.print("A data é invalida pois o ano nao e bissexto.");
-            //o dia e maior que 31
+        anoEhBissexto = (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0));
+         
+         // Verifica se o mês está fora do intervalo válido
+        if (mes < 1 || mes > 12) {
+            System.out.println("A data é inválida, pois o mês deve ser entre 1 e 12.");
+        // Verifica o dia para meses que possuem 30 ou menos dias
+        } else if (dia < 1 || (dia == 31 && (mes == 2 || mes == 4 || mes == 6 || mes == 9 || mes == 11))) {
+            System.out.println("A data é inválida, pois o mês " + mes + " não tem 31 dias.");
+        // Verifica dias em fevereiro
+        } else if (mes == 2 && (dia > 29 || (dia == 29 && !anoEhBissexto))) {
+            System.out.println("A data é inválida, pois fevereiro não tem " + dia + " dias nesse ano.");
+        // Verifica se o dia é maior que 31 para outros meses
         } else if (dia > 31) {
-            System.out.print("A data é invalida pois nao existe dia maior que 31.");
-            // quando dia e 31 e (o mes for fevereiro ou abril ou junho ou setembro ou novembro)
-        } else if (dia == 31 && (mes == 2 || mes == 4 || mes == 6 || mes == 9 || mes == 11 )){
-            System.out.print("A data é invalida pois nao existe 31 no mes + " + mes);
-            // quando o dia for 30 e o mes fevereiro
-        } else if (dia == 30 && mes == 2){
-            System.out.print("A data é invalida pois nao existe 30 de fevereiro.");
-            // se o mes for maior que 12
-        } else if (mes < 1 || mes <= 12){
-            System.out.print("A data é invalida pois os meses deve ser entre 1 e 12");
+            System.out.println("A data é inválida, pois não existe dia maior que 31.");
         } else {
-            System.out.print("A data é valida: ");
+            System.out.println("A data é válida.");
         }
         
         teclado.close();
